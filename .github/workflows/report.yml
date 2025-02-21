@@ -34,6 +34,7 @@ jobs:
         id: push_report
         uses: peaceiris/actions-gh-pages@v3
         with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: /report
           destination_dir: ${{ github.event.number }}
           enable_jekyll: true
