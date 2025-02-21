@@ -34,11 +34,13 @@ jobs:
           ls -la 
           ls ./report
           ls report/
+          mkdir temp
+          cp report/* temp/
       - name: Push Playwright Report to github pages
         id: push_report
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./report
+          publish_dir: ./temp
           destination_dir: ${{ github.event.number }}
           enable_jekyll: true
