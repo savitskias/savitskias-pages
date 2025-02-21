@@ -40,5 +40,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./report
-          destination_dir: ${{ github.event.number }}
+          destination_dir: report-test
           enable_jekyll: true
